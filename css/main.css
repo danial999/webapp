@@ -5,15 +5,22 @@ header {
     top: 0;
     left: 0;
     background: #1c1b1b;
- 
+
 
 }
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../img/body-background.jpg) 100% fixed;
+    background-size: cover;
+}
+
 
 .search-box{
 	color: white;
-float: right;
-padding-right: 40px;
-padding-top: 20px;
+    float: right;
+    padding-right: 40px;
+    padding-top: 20px;
 }
 .logo{
 	padding-top: 1%;
@@ -25,14 +32,19 @@ padding-top: 20px;
     padding: 5px;
     margin: 45px 20px 10px 0px;
 }
+.nav-title{
+    font-family: sans-serif;
+    display: block;  
+    padding-bottom: 4%; 
+}
+
 .nav-section{
-	    width: 300px;
+	width: 300px;
     height: 140px;
     display: inline-block;
     margin-right: 1.5%;
     color: white;
     text-align: center;
-background: url("./img/icons/action-report-new.png") left 50% top 60px no-repeat black;
 }
 
 .page-body {
@@ -40,8 +52,93 @@ background: url("./img/icons/action-report-new.png") left 50% top 60px no-repeat
 }
 .layout-wrap {
     width: 960px;
-    height: 850px;
+    height: 700px;
     margin: 0 auto;
 
-   padding :25px 10px 0 10px;
+    padding :25px 10px 0 10px;
 }
+
+.menu {
+ margin-top: 46px;
+}
+.menu-title{
+
+  line-height: 0px;
+}
+
+.menu-caption{
+
+    display: inline-block;
+    padding-left: 20px;
+    text-align: left;
+    background: rgba(235, 235, 235, 1);
+    width: 280px;
+    height: 30px;
+    font-family: sans-serif;
+    color: rgb(84, 84, 84);
+    position: relative;
+}
+
+.menu-arrow {
+
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 4%;
+    float: right;
+    background: url(../img/icons/arrow-down.png) ; no-repeat 0 0;
+    background-size: 100%;
+}
+.action-list{
+      width: 300px;
+
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+    display:none;
+    list-style-type: none;
+    position: absolute;
+
+    background: rgba(250, 250, 250, 1);
+    text-align: left;
+
+}
+.action-list li{
+    width: 280px;
+    height: 30px;
+    margin-left: 10px;
+    line-height: 30px;
+     border-bottom: 1px solid #D3D3D3; 
+}
+.action-list li a{
+     text-decoration: none;
+     font-family: sans-serif;
+    color: rgb(84, 84, 84);
+    padding-left: 15px;
+    display:block;
+}
+.action-list li:last-child {
+   border-bottom: none; 
+   display:block;
+}
+.action-list li a:hover {
+    background-color: #f1f1f1;
+
+}
+
+.menu-caption:hover {
+  background: rgba(235, 235, 235, 0.9);
+  display: inline-block;
+}
+
+.menu:hover .action-list {
+    display: block;
+
+
+}
+
+
+
+
