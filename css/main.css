@@ -49,14 +49,15 @@ body {
 
 .page-body {
     background: rgba(116, 116, 116, 0.4);
-}
-.layout-wrap {
-    width: 960px;
+     width: 960px;
     height: 700px;
     margin: 0 auto;
 
     padding :25px 10px 0 10px;
+
 }
+
+   
 
 .menu {
  margin-top: 46px;
@@ -133,7 +134,7 @@ body {
   display: inline-block;
 }
 
-.menu:hover .action-list {
+.nav-section:hover .action-list {
     display: block;
 
 
