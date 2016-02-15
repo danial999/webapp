@@ -4,12 +4,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="fonts/demo-files/demo.css">
+	<link rel="stylesheet" href="fonts/style.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 
 	<title>WebApp</title>
 
-	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+
 	<header>
 		<div class="layout-wrap">
 			<a href="#"><img  class ="logo" src="img/logo-netcraft.svg" alt="netcraft"></a>
@@ -24,7 +29,7 @@
 	<section class="page-body">
 		<div class="notifications">The data of UTF BI would be updated at 16:00 pm.</div>
 		<nav>
-			<div class="nav-section" style="background: url(img/icons/action-report-new.png) left 50% top 60px no-repeat black;">
+			<div class="nav-section" style="background: url(img/icons/action-report-new.png) left 50% top 60px no-repeat rgba(0, 0, 0, 1);">
 				<p class='nav-title'>Select <br> Reporting Platform</p>
 
 				<div class="menu">
@@ -62,7 +67,7 @@
 			
 			</div>
 			
-			<div class="nav-section" style="background: url(img/icons/actions-help.png) left 50% top 60px no-repeat black;">
+			<div class="nav-section" style="background: url(img/icons/actions-help.png) left 50% top 60px no-repeat rgba(0, 0, 0, 1);">
 				<p class='nav-title'>Help &amp; <br> Tutorials</p>
 
 				<div class="menu" >
@@ -82,24 +87,53 @@
 			</div>
 		</nav>
 
-		<section class="tabs">
+		<section id="tabs">
 			<ul>
-				<li><a href="#quick-reports">Quick Reports</a></li>
-				<li><a href="#my-folders">My Folders</a></li>
-				<li><a href="#my-team-folders">My Team Folders</a></li>
-				<li><a href="#public-folders">Public Folders</a></li>
+				<a href="#quick-reports" ><li><span class="icon-external-link"></span> Quick Reports</li></a>
+				<a href="#my-folders"><li><span class="icon-star-o"></span> My Folders</li></a>
+				<a href="#my-team-folders"><li><span class="icon-folder-open-o"></span> My Team Folders</li></a>
+				<a href="#public-folders"><li><span class="icon-copy"></span> Public Folders</li></a>
 			</ul>
+			
+			<div id="quick-reports" >
+				<label id="settings" for="set-icon" >
+					<img src="img/icons/settings.png" alt="settings icon">
+			</label>
+				<form id="input" method="GET" action="index.html#my-folders">
 
-			<div id="quick-reports">
+					<div class="report">
+						<label for="report01" class="rep">Report01</label>
+						<label for="name1" class="name">Name: </label><input id="name1" class="link-name" type="text">
+						<label for="url1" class="url">URL: </label><input id="url1" class="link-url" type="url">
+					</div>
+					<div class="report">
+						<label for="report01" class="rep">Report01</label>
+						<label for="name2" class="name">Name: </label><input id="name2" class="link-name" type="text">
+						<label for="url2" class="url">URL: </label><input id="url2" class="link-url" type="url">
+					</div>
+					<div class="report">
+						<label for="report01" class="rep">Report01</label>
+						<label for="name3" class="name">Name: </label><input id="name3" class="link-name" type="text">
+						<label for="url3" class="url">URL: </label><input id="url3" class="link-url" type="url">
+					</div>
+
+					<button id="save">Save</button>
+				</form>
 			</div>
 
 			<div id="my-folders">
+				<h1 class="title">Title</h1>
+				<p>Specifies what to do with the top/bottom edges of the content if it overflows the element's content area	</p>
+				<p>date </p>
+
 			</div>
 
 			<div id="my-team-folders">
+					<h2>3</h2>
 			</div>
 
 			<div id="public-folders">
+					<h2>4</h2>
 			</div>
 		</section>
 
