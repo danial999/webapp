@@ -46,7 +46,7 @@ function getSecondPart(str) {
 
 $(window).on('hashchange', function(e) {
   //.. work ..
-  debugger;
+
   //  var submenu1 = ul.getElementsByTagName('li')[0];
    // if( submenu) {
     if(window.location.hash) {
@@ -58,7 +58,7 @@ $(window).on('hashchange', function(e) {
     var nth=0;
     var elem =document.getElementById(hyperlinkText);
     var tabs =document.getElementById("tabs");
-    var curr_hash = hyperlinkText;
+    curr_hash = hyperlinkText;
     prev_hash = getSecondPart(e.originalEvent.oldURL);
     if(prev_hash==null){
       prev_hash ="quick-reports";
@@ -152,7 +152,7 @@ $('#settings').click(function(){
 });
 
 $('#save').click(function(){
-  if(check !== 2){
+  if(check == 2){
     var elem = document.getElementById("wrap-input");
     var settings = document.getElementById("settings");
   
@@ -160,8 +160,7 @@ $('#save').click(function(){
       elem.style.display ="none";
     
     }
-    if(check == 2){
-    }
+   
 
 });
 
@@ -273,8 +272,11 @@ $('#url3').on('input', function() {
 
 
 window.onload = function(e) {
+  check=0;
+ 
     var  x=  window.location.pathname;
     var y = document.title;
   history.pushState("", y,x);
   prev_hash=null;
+
 };
