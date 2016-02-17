@@ -1,5 +1,5 @@
 function Initiate() {
-  debugger;
+
   var elem = document.getElementById("wrap-input");
   var settings = document.getElementById("settings");
   var frame = document.querySelector('.frame2');
@@ -31,13 +31,13 @@ function Initiate() {
   }
 }
 
-function OnChange(name) {
+function OnChange(url) {
   debugger; 
   if (this.selectedIndex!==0) {
-    var name = name.value;
+    var url = url.value;
     var frame = document.querySelector('.frame2');
     var extend = document.querySelector('.expand2');
-    extend.href = name;
+    extend.href = url;
     extend.style.display = "block"
     frame.src = url;
     cancel_input();
@@ -90,20 +90,22 @@ function save_input() {
   if(check == 2){
     settings.style.background="rgb(235, 235, 235)";
     elem.style.display ="none";
-
+    var len = localStorage.length;
     var name = document.querySelectorAll('.link-name');
     var url = document.querySelectorAll('.link-url');
     var i;
    
     if(name != null){
       for (i = 0; i < name.length; ++i) {
+        len = localStorage.length;
         if (name[i].value) {
-          localStorage.setItem(name[i].id, name[i].value);
+          localStorage.setItem(len+"_"+name[i].id, name[i].value);
         }
          if (url[i].value) {
-          localStorage.setItem(url[i].id, url[i].value);
+          localStorage.setItem(len+"_"+url[i].id, url[i].value);
         }
-       
+       //  addEntry(name[i].value,url[i].value);
+       // }
       }
     }
     location.reload(); 
@@ -113,10 +115,23 @@ function save_input() {
   }
 
 
-
-
 }
 
+function addEntry(name,url) {
+    debugger;
+    var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+    if(existingEntries == null) existingEntries = [];
+    var entryTitle = name
+    var entryText = url
+    var entry = {
+        "name": entryTitle,
+        "url": entryText
+    };
+    localStorage.setItem("entry", JSON.stringify(entry));
+    // Save allEntries back to local storage
+    existingEntries.push(entry);
+    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
+}
 
 
 
