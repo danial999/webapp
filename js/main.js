@@ -59,7 +59,7 @@ $(window).on('hashchange', function(e) {
     var elem =document.getElementById(hyperlinkText);
     var tabs =document.getElementById("tabs");
     var curr_hash = hyperlinkText;
-    var prev_hash = getSecondPart(e.originalEvent.oldURL);
+    prev_hash = getSecondPart(e.originalEvent.oldURL);
     if(prev_hash==null){
       prev_hash ="quick-reports";
     }
@@ -151,32 +151,130 @@ $('#settings').click(function(){
 
 });
 
+$('#save').click(function(){
+  if(check !== 2){
+    var elem = document.getElementById("wrap-input");
+    var settings = document.getElementById("settings");
+  
+      settings.style.background="rgb(235, 235, 235)";
+      elem.style.display ="none";
+    
+    }
+    if(check == 2){
+    }
+
+});
 
 $('#name1').on('input', function() {
 
   var name = document.getElementById("name1");
    var url = document.getElementById("url1");
   if(name.value.length){
-   
+   if(url.value.slice(0,7) != "http://")
         url.style.border = "1px solid red";
+      check=0;
 
   }
   else
   {
+    check = 2;
      url.style.border = "none";
   }
         
 });
 $('#url1').on('input', function() {
-
   var name = document.getElementById("name1");
    var url = document.getElementById("url1");
   if(url.value.length){
-   if(url.value.slice(0,7)== "http://")
+    if(url.value.slice(0,7) == "http://"){
            url.style.border = "none";
+           check=2;
+    }
+    else 
+     {
+     url.style.border = "1px solid red";
+     check=0;
+    }     
   } 
+    
+});
+
+$('#name2').on('input', function() {
+
+  var name = document.getElementById("name2");
+   var url = document.getElementById("url2");
+
+  if(name.value.length){
+    if(url.value.slice(0,7) != "http://")
+        url.style.border = "1px solid red";
+      check =0;
+
+  }
   else
   {
-     url.style.border = "1px solid red";
-  }       
+     url.style.border = "none";
+     check=2;
+  }
+        
 });
+$('#url2').on('input', function() {
+
+  var name = document.getElementById("name2");
+   var url = document.getElementById("url2");
+  if(url.value.length){
+   if(url.value.slice(0,7)== "http://"){
+           url.style.border = "none";
+           check=2;
+       }
+       else
+  {
+     url.style.border = "1px solid red";
+     check=0;
+  }    
+  } 
+     
+});
+$('#name3').on('input', function() {
+
+  var name = document.getElementById("name3");
+   var url = document.getElementById("url3");
+  if(name.value.length){
+     if(url.value.slice(0,7) != "http://")
+        url.style.border = "1px solid red";
+      check=0;
+
+  }
+  else
+  {
+     url.style.border = "none";
+     check=2;
+  }
+        
+});
+$('#url3').on('input', function() {
+
+  var name = document.getElementById("name3");
+   var url = document.getElementById("url3");
+  if(url.value.length){
+   if(url.value.slice(0,7)== "http://"){
+           url.style.border = "none";
+           check=2;
+       }
+       else
+  {
+     url.style.border = "1px solid red";
+     check=0;
+  }      
+  } 
+   
+});
+
+
+
+
+window.onload = function(e) {
+    var  x=  window.location.pathname;
+    var y = document.title;
+  history.pushState("", y,x);
+  prev_hash=null;
+};
