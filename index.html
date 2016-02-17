@@ -7,14 +7,13 @@
 	<link rel="stylesheet" href="fonts/demo-files/demo.css">
 	<link rel="stylesheet" href="fonts/style.css">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
 
 
 	<title>WebApp</title>
 
 </head>
-<body>
-
+<body onload="Initiate();">
 	<header>
 		<div class="layout-wrap">
 			<a href="#"><img  class ="logo" src="img/logo-netcraft.svg" alt="netcraft"></a>
@@ -97,40 +96,43 @@
 			
 			<div id="quick-reports" >
 				<div class="head-reports" >
-					<div class="links-list">
-						<ul class="links">
-							<li class="link" ><a href="http://www.ynet.co.il/">Ynet</a></li>
-							<li class="link"><a href="http://www.ynet.co.il/">Ynet</a></li>
-						</ul>
-					</div>
-					<label id="settings" for="set-icon" >
-							<img src="img/icons/settings.png" alt="settings icon">
+					
+					<select id="links-list" onchange = "OnChange(this)">
+						<option hidden selected>livescore</option>
+					</select>
+
+					
+					<label id="settings" for="set-icon" onClick="settings()">
+						<img src="img/icons/settings.png" alt="settings icon">
 					</label>
 				</div>
 				<div id="wrap-input"> 
 					
-					<form id="input" >
+					<form id="input"  >
 
 						<div class="report">
 							<label for="report01" class="rep">Report01</label>
-							<label for="name1" class="name">Name: </label><input id="name1" class="link-name" type="text" required>
-							<label for="url1" class="url">URL: </label><input id="url1" class="link-url" type="url" required>
+							<label for="name1" class="name">Name: </label><input onkeyup="name_url('name1','url1')"  id="name1" class="link-name" type="text" required 	>
+							<label for="url1" class="url">URL: </label><input  onkeyup="url_check('url1')" id="url1" class="link-url" type="url" required>
 						</div>
 						<div class="report">
 							<label for="report02" class="rep">Report01</label>
-							<label for="name2" class="name">Name: </label><input id="name2" class="link-name" type="text" required>
-							<label for="url2" class="url">URL: </label><input id="url2" class="link-url" type="url" required>
+							<label for="name2" class="name">Name: </label><input onkeyup="name_url('name2','url2')"  id="name2" class="link-name" type="text" >
+							<label for="url2" class="url">URL: </label><input  onkeyup="url_check('url2')" id="url2" class="link-url" type="url" >
 						</div>
 						<div class="report">
 							<label for="report03" class="rep">Report01</label>
-							<label for="name3" class="name">Name: </label><input id="name3" class="link-name" type="text" required>
-							<label for="url3" class="url">URL: </label><input id="url3" class="link-url" type="url" required>
+							<label for="name3" class="name">Name: </label><input onkeyup="name_url('name3','url3')"  id="name3" class="link-name" type="text" >
+							<label for="url3" class="url">URL: </label><input onkeyup="url_check('url3')" id="url3" class="link-url" type="url" >
 						</div>
 						
-						<button    id="save">Save</button>
+						<button   id="save"  form= "input" type="button" onclick="save_input()">Save</button>
+						<button id="cancel"  form= "input" type="button" onclick="cancel_input()">Cancel</button>
 					</form>
-				
+
 				</div>
+				<a href='about:blank' class="expand2" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>
+				<iframe src='about:blank' class="frame2"></iframe>				
 			</div>	
 
 			<div id="my-folders">
@@ -150,6 +152,5 @@
 	
 
 
-	<script src="js/main.js"></script>
 </body>
 </html>
