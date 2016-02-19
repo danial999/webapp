@@ -20,7 +20,7 @@ function Initiate() {
    var cancel = 'cancel1';
   }
   OnRes();
-  removeOptions(document.getElementById(list));
+  removeOptions(list);
   for (var i = 0; i < localStorage.length; i=i+2){
         
  
