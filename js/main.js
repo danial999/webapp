@@ -20,6 +20,7 @@ function Initiate() {
    var cancel = 'cancel1';
   }
   OnRes();
+  removeOptions(document.getElementById(list));
   for (var i = 0; i < localStorage.length; i=i+2){
         
  
@@ -363,5 +364,12 @@ window.onload = function(e) {
 
 };
 
-
+function removeOptions(selectbox)
+{
+    var i;
+    for(i=selectbox.options.length-1;i>=0;i--)
+    {
+        selectbox.remove(i);
+    }
+}
 
