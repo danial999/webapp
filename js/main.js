@@ -10,12 +10,14 @@ function Initiate() {
   var frame = document.querySelector('#frame2');
   var list = document.querySelector('#links-list');
   var extend = document.querySelector('.expand2');
+  var cancel = 'cancel';
   } else {
   var elem = document.getElementById("wrap-input1");
   var settings = document.getElementById("settings1");
   var frame = document.querySelector('#frame3');
   var list = document.querySelector('#links-list2');
   var extend = document.querySelector('.expand3');
+   var cancel = 'cancel1';
   }
   OnRes();
   for (var i = 0; i < localStorage.length; i=i+2){
@@ -56,7 +58,7 @@ function Initiate() {
 
   if(frame.src!="about:blank"){
     list.style.display = "block"
-    cancel_input('cancel');
+    cancel_input(cancel);
 
     extend.style.display = "block"
     frame.style.display = "block"
