@@ -168,7 +168,7 @@ function save_input(save) {
        // }
       }
    
-    location.reload();
+  Initiate();
     } 
   }
   // if(check ==0 ){
