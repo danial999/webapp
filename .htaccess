@@ -845,12 +845,11 @@ FileETag None
 # https://httpd.apache.org/docs/current/mod/mod_expires.html
 
 <IfModule mod_expires.c>
-
+    
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
-
   # CSS
-
+    ExpiresByType css/main.css                          "access plus 10 minutes"
     ExpiresByType text/css                              "access plus 1 year"
 
 
@@ -883,7 +882,7 @@ FileETag None
     ExpiresByType application/javascript                "access plus 1 year"
     ExpiresByType application/x-javascript              "access plus 1 year"
     ExpiresByType text/javascript                       "access plus 1 year"
-
+    ExpiresByType js/main.js                            "access plus 1 hour"
 
   # Manifest files
 
@@ -893,6 +892,15 @@ FileETag None
 
 
   # Media files
+   ExpiresByType img/body-background.jpg                "access plus 10 minutes"
+   ExpiresByType img/icons/action-report-new.png        "access plus 10 minutes"
+   ExpiresByType img/icons/action-report-top.png        "access plus 10 minutes"
+   ExpiresByType img/icons/actions-help.png             "access plus 10 minutes"  
+   ExpiresByType icons/arrow-down.png                   "access plus 10 minutes"
+   ExpiresByType icons/expand.png                       "access plus 10 minutes"
+   ExpiresByType img/icons/settings.png                 "access plus 10 minutes"
+   ExpiresByType img/logo-netcraft.svg                  "access plus 10 minutes"
+
 
     ExpiresByType audio/ogg                             "access plus 1 month"
     ExpiresByType image/bmp                             "access plus 1 month"
