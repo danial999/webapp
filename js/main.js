@@ -1,26 +1,64 @@
 function Initiate() {
 
+  debugger;
+ var count_rep = -1;
+ var count_fol = -1;
+  var hash = window.location.hash.substring(1);
+  if((hash == "quick-reports")||(hash=='')){
   var elem = document.getElementById("wrap-input");
   var settings = document.getElementById("settings");
-  var frame = document.querySelector('.frame2');
+  var frame = document.querySelector('#frame2');
   var list = document.querySelector('#links-list');
+  var extend = document.querySelector('.expand2');
+  } else {
+  var elem = document.getElementById("wrap-input1");
+  var settings = document.getElementById("settings1");
+  var frame = document.querySelector('#frame3');
+  var list = document.querySelector('#links-list2');
+  var extend = document.querySelector('.expand3');
+  }
+  OnRes();
   for (var i = 0; i < localStorage.length; i=i+2){
+        
+ 
     var name = localStorage.getItem(localStorage.key(i));
     var url = localStorage.getItem(localStorage.key(i+1));
+    var res = localStorage.key(i).substring(0, 6);
+    if((res == "report")&&((hash == "quick-reports")||(hash==''))){
+      count_rep++;
        var opt = document.createElement('option');
+
+   
          opt.value = url;
          opt.innerHTML = name;
          list.appendChild(opt);
-         if(i==0){
+         if(count_rep==0){
+           extend.href = url;
          frame.src = url;
        }
-  }
+     }
+   else if ((res == "folder")&&(hash == "my-team-folders")){
+      count_fol++;
+       var opt = document.createElement('option');
+
+   
+         opt.value = url;
+         opt.innerHTML = name;
+         list.appendChild(opt);
+         if(count_fol==0){
+           extend.href = url;
+         frame.src = url;
+       }
+     }
+   }
 
 
 
   if(frame.src!="about:blank"){
     list.style.display = "block"
-    cancel_input();
+    cancel_input('cancel');
+
+    extend.style.display = "block"
     frame.style.display = "block"
   }
   else {
@@ -32,10 +70,9 @@ function Initiate() {
 }
 
 function OnChange(url) {
-  debugger; 
   if (this.selectedIndex!==0) {
     var url = url.value;
-    var frame = document.querySelector('.frame2');
+    var frame = document.querySelector('#frame2');
     var extend = document.querySelector('.expand2');
     extend.href = url;
     extend.style.display = "block"
@@ -50,21 +87,27 @@ function OnChange(url) {
 }
 
 
-window.onresize = function() {
-  var width =window.innerWidth;
-  var myMarginleft = (width -980)/2;
-  var myMarginRight = (width -980)/2;
+window.onresize = OnRes;
 
+function OnRes() {
+
+  var width =window.outerWidth;
+  var width2 =window.innerWidth;
+  var myMarginleft = (width -980)/2 - (width-width2)- (width-width2);
+  var myMarginRight = (width -980)/2 + (width-width2);
+  var container = document.querySelector('.container');
   if(width>980) {
     setStyle('.page-body' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
-    setStyle('#input' , {'width':950+'px'});
+    setStyle('.frame' , {'width':960+'px'});
+    setStyle('.input' , {'width': 960 +'px'});
     setStyle('.rep' , {'margin-right':8+'%'});
     setStyle('.name' , {'margin-left':2+'%','margin-right':0+'%'});
     setStyle('.url' , {'margin-left':7+'%'});
   }
   else {
+     setStyle('.frame' , {'width': 97+ '%'});
    setStyle('.page-body' , {'width':100+'%','margin-left':0+'px','margin-right':0+'px'});
-   setStyle('#input' , {'width':100+'%'});
+   setStyle('.input' , {'width':98+'%','margin-left':1+'%','margin-right':1+'%'});
  }
  if(width<950)
  {
@@ -75,63 +118,66 @@ window.onresize = function() {
 }
 
 }
-function cancel_input() {
+function cancel_input(cancel) {
+  if(cancel=="cancel"){
   var elem = document.getElementById("wrap-input");
   var settings = document.getElementById("settings");
+  }else{
+  var elem = document.getElementById("wrap-input1");
+  var settings = document.getElementById("settings1");
+  }
 
   settings.style.background="rgb(235, 235, 235)";
   elem.style.display ="none";
 }
 
-function save_input() {
+function save_input(save) {
   
+   if(save=="save"){
+    var start = "report"
   var elem = document.getElementById("wrap-input");
   var settings = document.getElementById("settings");
+  }else{
+    var start = "folder"
+    var elem = document.getElementById("wrap-input1");
+  var settings = document.getElementById("settings1");
+  }
   if(check == 2){
     settings.style.background="rgb(235, 235, 235)";
     elem.style.display ="none";
     var len = localStorage.length;
+       if(save=="save"){
     var name = document.querySelectorAll('.link-name');
     var url = document.querySelectorAll('.link-url');
+    }else{
+   var name = document.querySelectorAll('.link-name1');
+    var url = document.querySelectorAll('.link-url1');
+    }
     var i;
    
     if(name != null){
       for (i = 0; i < name.length; ++i) {
         len = localStorage.length;
         if (name[i].value) {
-          localStorage.setItem(len+"_"+name[i].id, name[i].value);
+          localStorage.setItem(start+"_"+len+"_"+name[i].id, name[i].value);
         }
          if (url[i].value) {
-          localStorage.setItem(len+"_"+url[i].id, url[i].value);
+          localStorage.setItem(start+"_"+len+"_"+url[i].id, url[i].value);
         }
        //  addEntry(name[i].value,url[i].value);
        // }
       }
-    }
-    location.reload(); 
+   
+    location.reload();
+    } 
   }
-  if(check ==0 ){
-    alert("Please check input");
-  }
+  // if(check ==0 ){
+  //   alert("Please check input");
+  // }
 
 
 }
 
-function addEntry(name,url) {
-    debugger;
-    var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
-    if(existingEntries == null) existingEntries = [];
-    var entryTitle = name
-    var entryText = url
-    var entry = {
-        "name": entryTitle,
-        "url": entryText
-    };
-    localStorage.setItem("entry", JSON.stringify(entry));
-    // Save allEntries back to local storage
-    existingEntries.push(entry);
-    localStorage.setItem("allEntries", JSON.stringify(existingEntries));
-}
 
 
 
@@ -164,6 +210,7 @@ window.onhashchange = function(e){
   else if (prev_hash == "public-folders"){ nth =4;}
 
   if(elem.id == "quick-reports"){
+
     setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
     if(nth){
       li = tabs.querySelector("ul a:nth-child("+nth+")");
@@ -174,7 +221,7 @@ window.onhashchange = function(e){
     li.style.background = "rgb(235, 235, 235)";
     li.style.color =  "black";
     setStyle(elem.id , {'display':'block', 'background':'rgb(235, 235, 235)'});
-
+    Initiate();
 
   }
   if(elem.id == "my-folders"){
@@ -188,10 +235,11 @@ window.onhashchange = function(e){
     li.style.color =  "black";
     li.style.background = "rgb(235, 235, 235)";
     setStyle(elem.id , {'display':'block', 'background':'rgb(235, 235, 235)'});
-
+    Initiate();
 
   }
   if(elem.id == "my-team-folders"){
+
     setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
     if(nth){
      li = tabs.querySelector("ul a:nth-child("+nth+")");
@@ -202,6 +250,7 @@ window.onhashchange = function(e){
    li.style.color =  "black";
    li.style.background = "rgb(235, 235, 235)";
    setStyle(elem.id , {'display':'block', 'background':'rgb(235, 235, 235)'});
+       Initiate();
 
  }
  if(elem.id == "public-folders"){
@@ -216,7 +265,7 @@ window.onhashchange = function(e){
  li.style.background = "rgb(235, 235, 235)";
  setStyle(elem.id , {'display':'block', 'background':'rgb(235, 235, 235)'});
 
-
+    Initiate();
 }
 
 elem.style.height = "700px";
@@ -241,10 +290,11 @@ else if(elem2 != null){
 
 }
 
-function settings() {
-  var elem = document.getElementById("wrap-input");
-  var settings = document.getElementById("settings");
-  if(elem.style.display == "none"){
+function settings(wrap,set) {
+
+  var elem = document.getElementById(set);
+  var settings = document.getElementById(wrap);
+  if((elem.style.display == "none")||((elem.style.display == ""))){
     elem.style.display ="block";
     settings.style.background="white";
   }
@@ -257,29 +307,40 @@ function settings() {
 
 
 function name_url(name, url) {
-
   var name = document.getElementById(name);
   var url = document.getElementById(url);
-  if((url.value.slice(0,7) != "http://")&&(name.value.length)){
+  if(name.value=="") {
+      name.style.border = "1px solid red";
+    check=0;
+  }
+  else if((url.value.slice(0,7) != "http://")&&(name.value.length>0)){
+    name.style.border = "none";   
     url.style.border = "1px solid red";
     check=0;
   }
-  else
+  else 
   {
     check = 2;
+    name.style.border = "none";
     url.style.border = "none";
   }
 
 }
-function url_check(url) {
+function url_check(name,url) {
+  var name = document.getElementById(name);
   var url = document.getElementById(url);
-  if((url.value.slice(0,7) != "http://")&&(url.value.length)){
+  if(url.value=="") {
+      url.style.border = "1px solid red";
+    check=0;
+  }
+  else if((url.value.slice(0,7) != "http://")&&(url.value.length)){
     url.style.border = "1px solid red";
     check=0;
   }
-  else
+  else 
   {
     check = 2;
+     url.style.border = "none";
     url.style.border = "none";
   }
 

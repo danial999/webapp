@@ -94,6 +94,7 @@
 			</ul>
 			
 			<div id="quick-reports" >
+				<div class="container">
 				<div class="head-reports" >
 					
 					<select id="links-list" onchange = "OnChange(this)">
@@ -101,47 +102,91 @@
 					</select>
 
 					
-					<label id="settings" for="set-icon" onClick="settings()">
+					<label id="settings" for="set-icon" onClick="settings('settings','wrap-input')">
 						<img src="img/icons/settings.png" alt="settings icon">
 					</label>
+					<a href='about:blank' class="expand2" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>
 				</div>
-				<div id="wrap-input"> 
+				<div id="wrap-input" class = "input"> 
 					
 					<form id="input"  >
 
 						<div class="report">
 							<label for="report01" class="rep">Report01</label>
 							<label for="name1" class="name">Name: </label><input onkeyup="name_url('name1','url1')"  id="name1" class="link-name" type="text" required 	>
-							<label for="url1" class="url">URL: </label><input  onkeyup="url_check('url1')" id="url1" class="link-url" type="url" required>
+							<label for="url1" class="url">URL: </label><input  onkeyup="url_check('name1','url1')" id="url1" class="link-url" type="url" required>
 						</div>
 						<div class="report">
-							<label for="report02" class="rep">Report01</label>
-							<label for="name2" class="name">Name: </label><input onkeyup="name_url('name2','url2')"  id="name2" class="link-name" type="text" >
-							<label for="url2" class="url">URL: </label><input  onkeyup="url_check('url2')" id="url2" class="link-url" type="url" >
+							<label for="report02" class="rep">Report02</label>
+							<label for="name2" class="name">Name: </label><input onkeyup="name_url('name2','url2')"  id="name2" class="link-name" type="text" required>
+							<label for="url2" class="url">URL: </label><input  onkeyup="url_check('name2','url2')" id="url2" class="link-url" type="url" required>
 						</div>
 						<div class="report">
-							<label for="report03" class="rep">Report01</label>
-							<label for="name3" class="name">Name: </label><input onkeyup="name_url('name3','url3')"  id="name3" class="link-name" type="text" >
-							<label for="url3" class="url">URL: </label><input onkeyup="url_check('url3')" id="url3" class="link-url" type="url" >
+							<label for="report03" class="rep">Report03</label>
+							<label for="name3" class="name">Name: </label><input onkeyup="name_url('name3','url3')"  id="name3" class="link-name" type="text" required>
+							<label for="url3" class="url">URL: </label><input onkeyup="url_check('name3','url3')" id="url3" class="link-url" type="url" required>
 						</div>
 						
-						<button   id="save"  form= "input" type="button" onclick="save_input()">Save</button>
-						<button id="cancel"  form= "input" type="button" onclick="cancel_input()">Cancel</button>
+						<button   id="save"  form= "input" type="submit" onclick="save_input('save')">Save</button>
+						<button id="cancel"  form= "input" type="submit" onclick="cancel_input('cancel')">Cancel</button>
 					</form>
 
 				</div>
-				<a href='about:blank' class="expand2" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>
-				<iframe src='about:blank' class="frame2"></iframe>				
+				
+						<iframe src='about:blank' class="frame" id="frame2"  ></iframe>	
+	
+				</div>			
 			</div>	
-
+	
 			<div id="my-folders">
-				<a href="http://www.paulirish.com/" class="expand" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>
-				<iframe src="http://www.paulirish.com/" class="frame"></iframe>				
+				<!-- <a href="http://www.paulirish.com/" class="expand" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>
+				<iframe src="http://www.paulirish.com/" class="frame"></iframe>			 -->	
 			</div>
 
 			<div id="my-team-folders">
-			</div>
+				<div class="container">
+				<div class="head-reports" >
+					
+					<select id="links-list2" onchange = "OnChange(this)">
+						<!-- <option hidden selected></option> -->
+					</select>
 
+					
+					<label id="settings1" for="set-icon" onClick="settings('settings1','wrap-input1')">
+						<img src="img/icons/settings.png" alt="settings icon">
+
+					</label>
+					<a href='about:blank' class="expand3" target="_blank"><img src="img/icons/expand.png" alt="open this link in a new window"></a>	
+				</div>
+				<div id="wrap-input1" class = "input"> 
+					
+					<form id="input">
+
+						<div class="report">
+							<label for="report01" class="rep">Folder 01</label>
+							<label for="name1" class="name">Name: </label><input onkeyup="name_url('name11','url11')"  id="name11" class="link-name1" type="text" required 	>
+							<label for="url11" class="url">URL: </label><input  onkeyup="url_check('name11','url11')" id="url11" class="link-url1" type="url" required>
+						</div>
+						<div class="report">
+							<label for="report02" class="rep">Folder 02</label>
+							<label for="name22" class="name">Name: </label><input onkeyup="name_url('name22','url22')"  id="name22" class="link-name1" type="text" required>
+							<label for="url22" class="url">URL: </label><input  onkeyup="url_check('name22','url22')" id="url22" class="link-url1" type="url" required>
+						</div>
+						<div class="report">
+							<label for="report03" class="rep">Folder 03</label>
+							<label for="name33" class="name">Name: </label><input onkeyup="name_url('name33','url33')"  id="name33" class="link-name1" type="text" required>
+							<label for="url33" class="url">URL: </label><input onkeyup="url_check('name33','url33')" id="url33" class="link-url1" type="url" required>
+						</div>
+						
+						<button   id="save1"  form= "input" type="submit" onclick="save_input('save1')">Save</button>
+						<button id="cancel1"  form= "input" type="submit" onclick="cancel_input('cancel1')">Cancel</button>
+					</form>
+
+				</div>
+				
+				<iframe src='about:blank' class="frame" id="frame3"></iframe>			
+			</div>
+			</div>
 			<div id="public-folders">
 				<h2>4</h2>
 			</div>
