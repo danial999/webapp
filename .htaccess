@@ -882,7 +882,7 @@ FileETag None
     ExpiresByType application/javascript                "access plus 1 year"
     ExpiresByType application/x-javascript              "access plus 1 year"
     ExpiresByType text/javascript                       "access plus 1 year"
-    ExpiresByType js/main.js                            "access plus 1 hour"
+    ExpiresByType http://danial999.github.io/webapp/js/main.js                            "access plus 1 hour"
 
   # Manifest files
 
