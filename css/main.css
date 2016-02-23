@@ -51,7 +51,7 @@ body{margin:0;padding:0;background:url(../img/body-background.jpg) 100% 100%;bac
 #save ,#save1{background:black;color:white;width:10%;height:25px;margin-right:10px;margin-bottom:10px;float:right;border:none;}
 #cancel ,#cancel1{background:white;color:black;text-decoration:underline;width:8%;height:25px;margin:0px;float:right;border:none;}
 .expand,.expand2 ,.expand3{float:right;padding-top:1%;margin-right:1%;text-align:center;}
-.expand2{display:none;}
+.expand2 , .expand3 {display:none;}
 .frame ,.frame3{height:640px;width:67%;position:absolute;margin-top:40px;}
 .frame2{}
 .head-reports{padding-top:10px;width:100%;}
