@@ -849,7 +849,7 @@ FileETag None
     ExpiresActive on
     ExpiresDefault                                      "access plus 1 month"
   # CSS
-    ExpiresByType css/main.css                          "access plus 10 minutes"
+    ExpiresByType css/main.css                          "access 10 minutes"
     ExpiresByType text/css                              "access plus 1 year"
 
 
