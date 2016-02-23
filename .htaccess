@@ -892,27 +892,17 @@ FileETag None
 
 
   # Media files
-   ExpiresByType img/body-background.jpg                "access plus 10 minutes"
-   ExpiresByType img/icons/action-report-new.png        "access plus 10 minutes"
-   ExpiresByType img/icons/action-report-top.png        "access plus 10 minutes"
-   ExpiresByType img/icons/actions-help.png             "access plus 10 minutes"  
-   ExpiresByType icons/arrow-down.png                   "access plus 10 minutes"
-   ExpiresByType icons/expand.png                       "access plus 10 minutes"
-   ExpiresByType img/icons/settings.png                 "access plus 10 minutes"
-   ExpiresByType img/logo-netcraft.svg                  "access plus 10 minutes"
+   ExpiresByType img/body-background.jpg                "access 10 minutes"
+   ExpiresByType img/icons/action-report-new.png        "access 10 minutes"
+   ExpiresByType img/icons/action-report-top.png        "access 10 minutes"
+   ExpiresByType img/icons/actions-help.png             "access 10 minutes"  
+   ExpiresByType icons/arrow-down.png                   "access 10 minutes"
+   ExpiresByType icons/expand.png                       "access 10 minutes"
+   ExpiresByType img/icons/settings.png                 "access 10 minutes"
+   ExpiresByType img/logo-netcraft.svg                  "access 10 minutes"
 
 
-    ExpiresByType audio/ogg                             "access plus 1 month"
-    ExpiresByType image/bmp                             "access plus 1 month"
-    ExpiresByType image/gif                             "access plus 1 month"
-    ExpiresByType image/jpeg                            "access plus 1 month"
-    ExpiresByType image/png                             "access plus 1 month"
-    ExpiresByType image/svg+xml                         "access plus 1 month"
-    ExpiresByType image/webp                            "access plus 1 month"
-    ExpiresByType video/mp4                             "access plus 1 month"
-    ExpiresByType video/ogg                             "access plus 1 month"
-    ExpiresByType video/webm                            "access plus 1 month"
-
+ 
 
   # Web fonts
 
