@@ -30,7 +30,7 @@ body{margin:0;padding:0;background:url(../img/body-background.jpg) 100% 100%;bac
 .nav-section:hover .action-list{z-index:+3;display:block;}
 .nav-section:hover .menu-arrow{-ms-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg);transition-duration:1s;}
 #tabs ul{-webkit-margin-before:0em;-webkit-margin-after:0em;-webkit-margin-start:0px;-webkit-margin-end:0px;-webkit-padding-start:0px;text-decoration:none;}
-#tabs ul a{background:rgb(135, 135, 135);width:23.4%;height:40px;margin-top:20px;line-height:40px;margin-right:2.133%;text-align:center;list-style-type:none;float:left;}
+#tabs ul a{background:rgb(80, 80, 80);width:23.4%;height:40px;margin-top:20px;line-height:40px;margin-right:2.133%;text-align:center;list-style-type:none;float:left;}
 #tabs ul a:last-child{margin-right:0px;}
 #tabs ul a:first-child{background:rgb(235, 235, 235);color:black;}
 #tabs ul a{overflow:hidden;text-decoration:none;font-family:sans-serif;font-size:20;color:rgb(250, 250, 250);}

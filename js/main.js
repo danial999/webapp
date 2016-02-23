@@ -214,10 +214,10 @@ window.onhashchange = function(e){
 
   if(elem.id == "quick-reports"){
 
-    setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
+    setStyle(prev_hash, {'display':'none', 'background':'rgb(80, 80, 80)'});
     if(nth){
       li = tabs.querySelector("ul a:nth-child("+nth+")");
-      li.style.background = "rgb(135, 135, 135)";
+      li.style.background = "rgb(80, 80, 80)";
       li.style.color =  "white";
     }
     li = tabs.querySelector("ul a:nth-child(1)");
@@ -228,10 +228,10 @@ window.onhashchange = function(e){
 
   }
   if(elem.id == "my-folders"){
-    setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
+    setStyle(prev_hash, {'display':'none', 'background':'rgb(80, 80, 80)'});
     if(nth){
       li = tabs.querySelector("ul a:nth-child("+nth+")");
-      li.style.background = "rgb(135, 135, 135)";
+      li.style.background = "rgb(80, 80, 80)";
       li.style.color =  "white";
     }
     li = tabs.querySelector("ul a:nth-child(2)");
@@ -243,10 +243,10 @@ window.onhashchange = function(e){
   }
   if(elem.id == "my-team-folders"){
 
-    setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
+    setStyle(prev_hash, {'display':'none', 'background':'rgb(80, 80, 80)'});
     if(nth){
      li = tabs.querySelector("ul a:nth-child("+nth+")");
-     li.style.background = "rgb(135, 135, 135)";
+     li.style.background = "rgb(80, 80, 80)";
      li.style.color =  "white";
    }
    li = tabs.querySelector("ul a:nth-child(3)");
@@ -257,10 +257,10 @@ window.onhashchange = function(e){
 
  }
  if(elem.id == "public-folders"){
-  setStyle(prev_hash, {'display':'none', 'background':'rgb(135, 135, 135)'});
+  setStyle(prev_hash, {'display':'none', 'background':'rgb(80, 80, 80)'});
   if(nth){
    li = tabs.querySelector("ul a:nth-child("+nth+")");
-   li.style.background = "rgb(135, 135, 135)";
+   li.style.background = "rgb(80, 80, 80)";
    li.style.color =  "white";
  }
  li = tabs.querySelector("ul a:nth-child(4)");
