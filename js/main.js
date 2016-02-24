@@ -54,7 +54,8 @@ function Initiate() {
        var opt = document.createElement('option');
 
 
-   
+        input_name.value = name;
+        input_url.value = url;
          opt.value = url;
          opt.innerHTML = name;
          list.appendChild(opt);
