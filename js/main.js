@@ -31,10 +31,11 @@ function Initiate() {
     var url = localStorage.getItem(localStorage.key(i+1));
     var str2 = localStorage.key(i+1).split("_", 2).pop();
     var res = localStorage.key(i).split("_").pop();
-    if((res == "report")&&((hash == "quick-reports")||(hash==''))){
-    str3 =(i+1);
     var input_name =  document.getElementById(str1);
     var input_url =  document.getElementById(str2);
+    if((res == "report")&&((hash == "quick-reports")||(hash==''))){
+   
+   
     var opt = document.createElement('option');
     count_rep++;
        
@@ -82,10 +83,17 @@ function Initiate() {
 }
 
 function OnChange(url) {
+  debugger;
   if (this.selectedIndex!==0) {
+      var hash = window.location.hash.substring(1);
     var url = url.value;
+     if((hash == "quick-reports")||(hash=='')){
     var frame = document.querySelector('#frame2');
     var extend = document.querySelector('.expand2');
+    }else {
+      var frame = document.querySelector('#frame3');
+    var extend = document.querySelector('.expand3');
+    }
     extend.href = url;
     extend.style.display = "block"
     frame.src = url;
