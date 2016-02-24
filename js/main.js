@@ -1,6 +1,6 @@
 function Initiate() {
 
-  debugger;
+  
  var count_rep = -1;
  var count_fol = -1;
   var hash = window.location.hash.substring(1);
@@ -22,16 +22,24 @@ function Initiate() {
   OnRes();
   removeOptions(list);
   for (var i = 0; i < localStorage.length; i=i+2){
-        
- 
-    var name = localStorage.getItem(localStorage.key(i));
-    var url = localStorage.getItem(localStorage.key(i+1));
-    var res = localStorage.key(i).substring(0, 6);
-    if((res == "report")&&((hash == "quick-reports")||(hash==''))){
-      count_rep++;
-       var opt = document.createElement('option');
+    debugger;
+    
 
-   
+      
+    var name = localStorage.getItem(localStorage.key(i));
+    var str1 = localStorage.key(i).split("_", 1);
+    var url = localStorage.getItem(localStorage.key(i+1));
+    var str2 = localStorage.key(i+1).split("_", 2).pop();
+    var res = localStorage.key(i).split("_").pop();
+    if((res == "report")&&((hash == "quick-reports")||(hash==''))){
+    str3 =(i+1);
+    var input_name =  document.getElementById(str1);
+    var input_url =  document.getElementById(str2);
+    var opt = document.createElement('option');
+    count_rep++;
+       
+        input_name.value = name;
+        input_url.value = url;
          opt.value = url;
          opt.innerHTML = name;
          list.appendChild(opt);
@@ -43,6 +51,7 @@ function Initiate() {
    else if ((res == "folder")&&(hash == "my-team-folders")){
       count_fol++;
        var opt = document.createElement('option');
+
 
    
          opt.value = url;
@@ -162,10 +171,10 @@ function save_input(save) {
       for (i = 0; i < name.length; ++i) {
         len = localStorage.length;
         if (name[i].value) {
-          localStorage.setItem(start+"_"+len+"_"+name[i].id, name[i].value);
+          localStorage.setItem(name[i].id+"_"+start, name[i].value);
         }
          if (url[i].value) {
-          localStorage.setItem(start+"_"+len+"_"+url[i].id, url[i].value);
+          localStorage.setItem(name[i].id+"_"+url[i].id+"_"+start, url[i].value);
         }
        //  addEntry(name[i].value,url[i].value);
        // }
