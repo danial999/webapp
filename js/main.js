@@ -413,7 +413,7 @@ function removeOptions(selectbox)
 
 function searchFn() {
   
-   debugger;
+
   for (var i = 0; i < localStorage.length; i=i+2){
      var hash = window.location.hash.substring(1);
    var s = document.getElementById("search");
@@ -463,25 +463,27 @@ var hash = window.location.hash.substring(1);
 //       if( window.location.hash ==''){ 
 //       window.location.hash = "quick-reports";
 // }
-  
+     debugger;
   var search = document.querySelector('#search');
   if((hash == "quick-reports")||(hash=='')) {
         var list = document.querySelector('#links-list');
      var frame = document.querySelector('#frame2');
-  var extend = document.querySelector('#expand2');
+      var extend = document.querySelector('.expand2');
   }else if (hash == "my-folders"){
   var frame = document.querySelector('#frame44');
-  var extend = document.querySelector('#expand44');
+  var extend = document.querySelector('.expand44');
   } else if (hash == "my-team-folders") {
    var list = document.querySelector('#links-list2');
   var frame = document.querySelector('#frame3');
-  var extend = document.querySelector('#expand3');
+  var extend = document.querySelector('.expand3');
   }
   else if (hash == "public-folders") {
   var frame = document.querySelector('#frame');
-  var extend = document.querySelector('#expand');
+  var extend = document.querySelector('.expand');
   }
+  if(list != null){
   list.style.display = "none";
+  }
   query = search.value;
   str = "https://www.bing.com/search?q=";
 
