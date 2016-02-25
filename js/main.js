@@ -71,6 +71,7 @@ if(hash == "my-team-folders"){
 else{
   var list = document.querySelector('#links-list');
 }
+debugger;
      str1 =str1 + "";
      var num = str1.substring(4, 5);
     list.selectedIndex = (num-1);
@@ -419,7 +420,7 @@ function searchFn() {
    flag = url;
     if(res == "report"){
      
-      if(hash =="quick-reports" ){
+      if((hash =="quick-reports" )||()){
         OnChange(flag);
         var list = document.querySelector('#links-list');
          str1 =str1 + "";
@@ -432,7 +433,7 @@ function searchFn() {
       }
     return;
    }else{ 
-      if(hash =="my-team-folders" ){
+     if((hash == "quick-reports")||(hash=='')){ 
         OnChange(flag);
         var list = document.querySelector('#links-list2');
          str1 =str1 + "";
