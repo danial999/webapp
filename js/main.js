@@ -379,18 +379,7 @@ function url_check(name,url) {
 
 }
 
-function clearHash() {
-    check=0;
-var hash = window.location.hash.substring(1);
-    if( window.location.hash ==''){ 
-      hash= "quick-reports";
-}
-     debugger;
-  var  x=  window.location.pathname;
-  var y = document.title;
-  history.pushState("", y,x);
-  history.pushState(hash, y,x);
-}
+
 
 
 
