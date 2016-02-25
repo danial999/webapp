@@ -5,14 +5,14 @@ function Initiate() {
 
    if(flag ==7){
      var frame = document.querySelector('#frame44');
-    var extend = document.querySelector('.expand44');
+    var extend = document.querySelector('#expand44');
     frame.src = "http://motherfuckingwebsite.com/";
     extend.href = "http://motherfuckingwebsite.com/";
     flag=1;
   }
    if(flag ==8){
   var frame = document.querySelector('#frame');
-  var extend = document.querySelector('.expand');
+  var extend = document.querySelector('#expand');
     frame.src = "http://motherfuckingwebsite.com/";
   extend.href = "http://motherfuckingwebsite.com/";
   flag=1;
@@ -25,14 +25,14 @@ function Initiate() {
   var settings = document.getElementById("settings");
   var frame = document.querySelector('#frame2');
   var list = document.querySelector('#links-list');
-  var extend = document.querySelector('.expand2');
+  var extend = document.querySelector('#expand2');
   var cancel = 'cancel';
 } else {
   var elem = document.getElementById("wrap-input1");
   var settings = document.getElementById("settings1");
   var frame = document.querySelector('#frame3');
   var list = document.querySelector('#links-list2');
-  var extend = document.querySelector('.expand3');
+  var extend = document.querySelector('#expand3');
   var cancel = 'cancel1';
 }
 
@@ -76,7 +76,7 @@ for (var i = 0; i < localStorage.length; i=i+2){
 }
 }
 
-if(flag !=1){
+if(isNaN(flag)){
 OnChange(flag);
 if(hash == "my-team-folders"){
  var list = document.querySelector('#links-list2');
@@ -113,10 +113,10 @@ function OnChange(url) {
     var url = url;
     if((hash == "quick-reports")||(hash=='')){
       var frame = document.querySelector('#frame2');
-      var extend = document.querySelector('.expand2');
+      var extend = document.querySelector('#expand2');
     }else {
       var frame = document.querySelector('#frame3');
-      var extend = document.querySelector('.expand3');
+      var extend = document.querySelector('#expand3');
     }
     extend.href = url;
     extend.style.display = "block"
@@ -477,20 +477,22 @@ var hash = window.location.hash.substring(1);
   if((hash == "quick-reports")||(hash=='')) {
         var list = document.querySelector('#links-list');
      var frame = document.querySelector('#frame2');
-      var extend = document.querySelector('.expand2');
+      var extend = document.querySelector('#expand2');
+      flag =1;
   }else if (hash == "my-folders"){
     flag =8;
   var frame = document.querySelector('#frame44');
-  var extend = document.querySelector('.expand44');
+  var extend = document.querySelector('#expand44');
   } else if (hash == "my-team-folders") {
    var list = document.querySelector('#links-list2');
   var frame = document.querySelector('#frame3');
-  var extend = document.querySelector('.expand3');
+  var extend = document.querySelector('#expand3');
+  flag =1;
   }
   else if (hash == "public-folders") {
        flag =7;
   var frame = document.querySelector('#frame');
-  var extend = document.querySelector('.expand');
+  var extend = document.querySelector('#expand');
   }
   if(list != null){
   list.style.display = "none";
@@ -502,7 +504,7 @@ var hash = window.location.hash.substring(1);
 
   frame.src = str2;
   extend.href = str2;
-  flag =1;
+  
   return;
 
 }
