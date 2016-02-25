@@ -314,7 +314,7 @@ window.onhashchange = function(e){
  Initiate();
 }
 
-elem.style.height = "700px";
+elem.style.height = "740px";
 }
 
 function setStyle( objId, propertyObject )
