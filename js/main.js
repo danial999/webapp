@@ -401,7 +401,7 @@ window.onload = function(e) {
   var  x=  window.location.pathname;
   var y = document.title;
   history.pushState("", y,x);
-
+  history.pushState(hash, y,x);
 };
 
 function removeOptions(selectbox)
