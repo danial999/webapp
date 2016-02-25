@@ -379,7 +379,14 @@ function url_check(name,url) {
 
 }
 
+function clearHash() {
+    check=0;
 
+  var  x=  window.location.pathname;
+  var y = document.title;
+  history.pushState("", y,x);
+  prev_hash=null;
+}
 
 
 
@@ -450,12 +457,31 @@ function searchFn() {
  }
  
 }
-
-  // window.location.hash = "my-folders";
-
+var hash = window.location.hash.substring(1);
+//    window.location.hash = "";
+//       window.location.hash = hash;
+//       if( window.location.hash ==''){ 
+//       window.location.hash = "quick-reports";
+// }
+  
   var search = document.querySelector('#search');
+  if((hash == "quick-reports")||(hash=='')) {
+        var list = document.querySelector('#links-list');
+     var frame = document.querySelector('#frame2');
+  var extend = document.querySelector('#expand2');
+  }else if (hash == "my-folders"){
   var frame = document.querySelector('#frame44');
   var extend = document.querySelector('#expand44');
+  } else if (hash == "my-team-folders") {
+   var list = document.querySelector('#links-list2');
+  var frame = document.querySelector('#frame3');
+  var extend = document.querySelector('#expand3');
+  }
+  else if (hash == "public-folders") {
+  var frame = document.querySelector('#frame');
+  var extend = document.querySelector('#expand');
+  }
+  list.style.display = "none";
   query = search.value;
   str = "https://www.bing.com/search?q=";
 
