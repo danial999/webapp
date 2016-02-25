@@ -491,6 +491,7 @@ var hash = window.location.hash.substring(1);
 
   frame.src = str2;
   extend.href = str2;
+  flag =1;
   return;
 
 }
