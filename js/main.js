@@ -1,7 +1,7 @@
 flag =1;
 
 function Initiate() {
-  debugger;
+ 
 
    if(flag ==7){
      var frame = document.querySelector('#frame44');
@@ -41,9 +41,15 @@ OnRes();
 removeOptions(list);
 for (var i = 0; i < localStorage.length; i=i+2){
   var name = localStorage.getItem(localStorage.key(i));
+  var s = document.getElementById("search");
   var str1 = localStorage.key(i).split("_", 1);
-  var url = localStorage.getItem(localStorage.key(i+1));
   var str2 = localStorage.key(i+1).split("_", 2).pop();
+  if(name == s.value){
+  var name44 = name;  
+  var str44=str1;
+  }
+  var url = localStorage.getItem(localStorage.key(i+1));
+
   var res = localStorage.key(i).split("_").pop();
   var input_name =  document.getElementById(str1);
   var input_url =  document.getElementById(str2);
@@ -78,15 +84,19 @@ for (var i = 0; i < localStorage.length; i=i+2){
 
 if(isNaN(flag)){
 OnChange(flag);
-if(hash == "my-team-folders"){
- var list = document.querySelector('#links-list2');
+  name44 =name44 + "";
+ var num = name44.substring(5, 6);
+  
+if(isNaN(num)){
+ var list = document.querySelector('#links-list');
 }
 else{
-  var list = document.querySelector('#links-list');
+  var list = document.querySelector('#links-list2');
 }
 debugger;
-     str1 =str1 + "";
-     var num = str1.substring(4, 5);
+     str44 =str44 + "";
+     var num = str44.substring(4, 5);
+    
     list.selectedIndex = (num-1);
     flag=1;
 }
@@ -107,7 +117,6 @@ else {
 }
 
 function OnChange(url) {
-  debugger;
   if (this.selectedIndex!==0) {
     var hash = window.location.hash.substring(1);
     var url = url;
@@ -215,9 +224,6 @@ if(check == 2){
      Initiate();
    } 
  }
-  // if(check ==0 ){
-  //   alert("Please check input");
-  // }
 
 
 }
@@ -231,7 +237,6 @@ function getSecondPart(str) {
 
 
 window.onhashchange = function(e){
-   debugger;
   if(window.location.hash) {
     var oldURL = e.oldURL; 
     var newURL = e.newURL; 
@@ -400,7 +405,6 @@ function url_check(name,url) {
 
 
 window.onload = function(e) {
-     debugger;
   check=0;
 
   var  x=  window.location.pathname;
@@ -412,8 +416,7 @@ window.onload = function(e) {
 
 function removeOptions(selectbox)
 {
-  debugger;
-  var i;
+    var i;
   for(i=selectbox.options.length-1;i>=0;i--)
   {
     selectbox.remove(i);
@@ -439,8 +442,10 @@ function searchFn() {
       if((hash == "quick-reports")||(hash=='')){ 
         OnChange(flag);
         var list = document.querySelector('#links-list');
+        debugger;
          str1 =str1 + "";
         var num = str1.substring(4, 5);
+     
         list.selectedIndex = (num-1);
         flag=1;
          }
@@ -450,10 +455,13 @@ function searchFn() {
     return;
    }else{ 
       if(hash =="my-team-folders" ){
+        debugger;
         OnChange(flag);
         var list = document.querySelector('#links-list2');
          str1 =str1 + "";
         var num = str1.substring(4, 5);
+        
+  
         list.selectedIndex = (num-1);
         flag=1;
          } 
@@ -472,7 +480,7 @@ var hash = window.location.hash.substring(1);
 //       if( window.location.hash ==''){ 
 //       window.location.hash = "quick-reports";
 // }
-     debugger;
+   
   var search = document.querySelector('#search');
   if((hash == "quick-reports")||(hash=='')) {
         var list = document.querySelector('#links-list');
