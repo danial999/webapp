@@ -1,6 +1,6 @@
 function Initiate() {
 
-  
+  debugger;
  var count_rep = -1;
  var count_fol = -1;
   var hash = window.location.hash.substring(1);
@@ -22,10 +22,8 @@ function Initiate() {
   OnRes();
   removeOptions(list);
   for (var i = 0; i < localStorage.length; i=i+2){
-    debugger;
+  
     
-
-      
     var name = localStorage.getItem(localStorage.key(i));
     var str1 = localStorage.key(i).split("_", 1);
     var url = localStorage.getItem(localStorage.key(i+1));
@@ -84,10 +82,9 @@ function Initiate() {
 }
 
 function OnChange(url) {
-  debugger;
   if (this.selectedIndex!==0) {
       var hash = window.location.hash.substring(1);
-    var url = url.value;
+      var url = url;
      if((hash == "quick-reports")||(hash=='')){
     var frame = document.querySelector('#frame2');
     var extend = document.querySelector('.expand2');
@@ -208,6 +205,7 @@ function getSecondPart(str) {
 
 
 window.onhashchange = function(e){
+  debugger;
   if(window.location.hash) {
     var oldURL = e.oldURL; 
     var newURL = e.newURL; 
@@ -391,3 +389,27 @@ function removeOptions(selectbox)
     }
 }
 
+function searchFn() {
+debugger;
+    for (var i = 0; i < localStorage.length; i=i+2){
+       var s = document.getElementById("search");
+       var name = localStorage.getItem(localStorage.key(i));
+        var str1 = localStorage.key(i).split("_", 1);
+        var url = localStorage.getItem(localStorage.key(i+1));
+        var str2 = localStorage.key(i+1).split("_", 2).pop();
+        var res = localStorage.key(i).split("_").pop();
+        if(name==s.value){
+          if(res == "report"){
+         
+         OnChange(url);
+           window.location.hash = "quick-reports";
+          }else{
+          OnChange(url);
+           window.location.hash ="my-team-folders";
+          }
+          
+        return;
+      }
+    }
+    
+ }
