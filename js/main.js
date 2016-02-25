@@ -3,7 +3,17 @@ flag =1;
 function Initiate() {
   debugger;
 
-   
+   if(flag ==8){
+     var frame = document.querySelector('#frame44');
+    var extend = document.querySelector('.expand44');
+    frame.src = "http://motherfuckingwebsite.com/";
+    extend.href = "http://motherfuckingwebsite.com/";
+  var frame = document.querySelector('#frame');
+  var extend = document.querySelector('.expand');
+    frame.src = "http://motherfuckingwebsite.com/";
+  extend.href = "http://motherfuckingwebsite.com/";
+  flag=1;
+   }
  var count_rep = -1;
  var count_fol = -1;
  var hash = window.location.hash.substring(1);
@@ -267,6 +277,7 @@ window.onhashchange = function(e){
     li.style.color =  "black";
     li.style.background = "rgb(235, 235, 235)";
     setStyle(elem.id , {'display':'block', 'background':'rgb(235, 235, 235)'});
+
     Initiate();
 
   }
@@ -465,6 +476,7 @@ var hash = window.location.hash.substring(1);
      var frame = document.querySelector('#frame2');
       var extend = document.querySelector('.expand2');
   }else if (hash == "my-folders"){
+    flag =8;
   var frame = document.querySelector('#frame44');
   var extend = document.querySelector('.expand44');
   } else if (hash == "my-team-folders") {
@@ -473,6 +485,7 @@ var hash = window.location.hash.substring(1);
   var extend = document.querySelector('.expand3');
   }
   else if (hash == "public-folders") {
+       flag =8;
   var frame = document.querySelector('#frame');
   var extend = document.querySelector('.expand');
   }
