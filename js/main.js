@@ -381,19 +381,7 @@ function url_check(name,url) {
 
 function clearHash() {
     check=0;
-
-  var  x=  window.location.pathname;
-  var y = document.title;
-  history.pushState("", y,x);
-  prev_hash=null;
-}
-
-
-
-window.onload = function(e) {
-     debugger;
-  check=0;
-  var hash = window.location.hash.substring(1);
+var hash = window.location.hash.substring(1);
     if( window.location.hash ==''){ 
       hash= "quick-reports";
 }
@@ -402,6 +390,21 @@ window.onload = function(e) {
   var y = document.title;
   history.pushState("", y,x);
   history.pushState(hash, y,x);
+}
+
+
+
+
+
+window.onload = function(e) {
+     debugger;
+  check=0;
+
+  var  x=  window.location.pathname;
+  var y = document.title;
+  history.pushState("", y,x);
+  prev_hash=null;
+
 };
 
 function removeOptions(selectbox)
