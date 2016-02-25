@@ -420,7 +420,7 @@ function searchFn() {
    flag = url;
     if(res == "report"){
      
-      if((hash =="quick-reports" )||()){
+      if((hash == "quick-reports")||(hash=='')){ 
         OnChange(flag);
         var list = document.querySelector('#links-list');
          str1 =str1 + "";
@@ -433,7 +433,7 @@ function searchFn() {
       }
     return;
    }else{ 
-     if((hash == "quick-reports")||(hash=='')){ 
+      if(hash =="my-team-folders" ){
         OnChange(flag);
         var list = document.querySelector('#links-list2');
          str1 =str1 + "";
