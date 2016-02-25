@@ -450,7 +450,7 @@ function searchFn() {
  
 }
 
-  window.location.hash = "my-folders";
+  // window.location.hash = "my-folders";
 
   var search = document.querySelector('#search');
   var frame = document.querySelector('#frame44');
