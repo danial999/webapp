@@ -393,11 +393,14 @@ function clearHash() {
 window.onload = function(e) {
      debugger;
   check=0;
-
+  var hash = window.location.hash.substring(1);
+    if( window.location.hash ==''){ 
+      hash= "quick-reports";
+}
+     debugger;
   var  x=  window.location.pathname;
   var y = document.title;
   history.pushState("", y,x);
-  prev_hash=null;
 
 };
 
