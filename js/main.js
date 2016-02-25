@@ -3,11 +3,14 @@ flag =1;
 function Initiate() {
   debugger;
 
-   if(flag ==8){
+   if(flag ==7){
      var frame = document.querySelector('#frame44');
     var extend = document.querySelector('.expand44');
     frame.src = "http://motherfuckingwebsite.com/";
     extend.href = "http://motherfuckingwebsite.com/";
+    flag=1;
+  }
+   if(flag ==8){
   var frame = document.querySelector('#frame');
   var extend = document.querySelector('.expand');
     frame.src = "http://motherfuckingwebsite.com/";
@@ -485,7 +488,7 @@ var hash = window.location.hash.substring(1);
   var extend = document.querySelector('.expand3');
   }
   else if (hash == "public-folders") {
-       flag =8;
+       flag =7;
   var frame = document.querySelector('#frame');
   var extend = document.querySelector('.expand');
   }
