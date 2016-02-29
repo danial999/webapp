@@ -149,7 +149,25 @@ function OnRes() {
   var myMarginleft = (width -980)/2 - (width-width2)- (width-width2);
   var myMarginRight = (width -980)/2 + (width-width2);
   var container = document.querySelector('.container');
+ var adjust = (1000 -width);
+ var fontSize = 0;
+
+  if(adjust>0) {
+    adjust=adjust/18;
+    
+    fontSize = (100-adjust);
+     console.log(fontSize);
+    setStyle('.menu-title' , {'font-size':fontSize+'%'});
+     setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
+     setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
+      setStyle('.link-url' , {'width':(42-(adjust/4))+'%'});                                      
+     setStyle('.link-name' , {'width':(22-(adjust/5))+'%'});  
+     setStyle('.rep' , {'margin-right':(8-(adjust/3))+'%'});
+    setStyle('.url' , {'margin-left':(7-(adjust/7))+'%'});
+       setStyle('.cancel' , {'margin-right':(adjust/10)+'%'});
+  }
   if(width>980) {
+
     setStyle('.page-body' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
     setStyle('.frame' , {'width':960+'px'});
     setStyle('.input' , {'width': 960 +'px'});
@@ -160,15 +178,9 @@ function OnRes() {
   else {
    setStyle('.frame' , {'width': 97+ '%'});
    setStyle('.page-body' , {'width':100+'%','margin-left':0+'px','margin-right':0+'px'});
-   setStyle('.input' , {'width':98+'%','margin-left':1+'%','margin-right':1+'%'});
+   setStyle('.input' , {'width':100+'%','margin-left':0+'%','margin-right':0+'%'});
  }
- if(width<950)
- {
-  setStyle('.rep' , {'margin-right':0+'%'});
-  setStyle('.name' , {'margin-left':0+'%','margin-right':0+'%'});
-  setStyle('.url' , {'margin-left':0+'%'});
 
-}
 
 }
 function cancel_input(cancel) {
