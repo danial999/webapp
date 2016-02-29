@@ -156,8 +156,9 @@ function OnRes() {
     adjust=adjust/18;
     
     fontSize = (100-adjust);
-     console.log(fontSize);
+    
     setStyle('.menu-title' , {'font-size':fontSize+'%'});
+ 
       setStyle('.nav-title' , {'font-size':fontSize+'%'});
      setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
      setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
@@ -178,10 +179,12 @@ function OnRes() {
   }
   else {
    setStyle('.frame' , {'width': 97+ '%'});
-   setStyle('.page-body' , {'width':100+'%','margin-left':0+'px','margin-right':0+'px'});
+   setStyle('.page-body' , {'width':98.5+'%','margin-left':0+'px','margin-right':1.5+'%'});
    setStyle('.input' , {'width':100+'%','margin-left':0+'%','margin-right':0+'%'});
  }
-
+var widthList =  document.querySelector('.menu').offsetWidth;
+   setStyle('.action-list' , {'width':widthList+'px'});
+ console.log(widthList);
 
 }
 function cancel_input(cancel) {
