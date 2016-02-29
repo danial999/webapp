@@ -149,28 +149,14 @@ function OnRes() {
   var myMarginleft = (width -980)/2 - (width-width2)- (width-width2);
   var myMarginRight = (width -980)/2 + (width-width2);
   var container = document.querySelector('.container');
- var adjust = (1000 -width);
- var fontSize = 0;
 
-  if(adjust>0) {
-    adjust=adjust/18;
-    
-    fontSize = (100-adjust);
-    
-    setStyle('.menu-title' , {'font-size':fontSize+'%'});
- 
-      setStyle('.nav-title' , {'font-size':fontSize+'%'});
-     setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
-     setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
-      setStyle('.link-url' , {'width':(42-(adjust/4))+'%'});                                      
-     setStyle('.link-name' , {'width':(22-(adjust/5))+'%'});  
-     setStyle('.rep' , {'margin-right':(8-(adjust/3))+'%'});
-    setStyle('.url' , {'margin-left':(7-(adjust/7))+'%'});
-       setStyle('.cancel' , {'margin-right':(adjust/10)+'%'});
-  }
   if(width>980) {
-
+setStyle('.menu-title' , {'font-size':100+'%'});
+ 
+      setStyle('.nav-title' , {'font-size':100+'%'});
+       setStyle('.action-list' , {'font-size':100+'%'});
     setStyle('.page-body' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
+    setStyle('.layout-wrap' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
     setStyle('.frame' , {'width':960+'px'});
     setStyle('.input' , {'width': 960 +'px'});
     setStyle('.rep' , {'margin-right':8+'%'});
@@ -180,8 +166,29 @@ function OnRes() {
   else {
    setStyle('.frame' , {'width': 97+ '%'});
    setStyle('.page-body' , {'width':98.5+'%','margin-left':0+'px','margin-right':1.5+'%'});
+   setStyle('.layout-wrap' , {'width':98.5+'%','margin-left':0+'px','margin-right':1.5+'%'});
    setStyle('.input' , {'width':100+'%','margin-left':0+'%','margin-right':0+'%'});
  }
+  var adjust = (1000 -width);
+ var fontSize = 0;
+
+  if(adjust>0) {
+    adjust=adjust/16;
+    
+    fontSize = (100-adjust);
+  
+    setStyle('.menu-title' , {'font-size':fontSize+'%'});
+ 
+      setStyle('.nav-title' , {'font-size':fontSize+'%'});
+       setStyle('.action-list' , {'font-size':fontSize+'%'});
+     setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
+     setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
+      setStyle('.link-url' , {'width':(42-(adjust/4))+'%'});                                      
+     setStyle('.link-name' , {'width':(22-(adjust/5))+'%'});  
+     setStyle('.rep' , {'margin-right':(8-(adjust/3))+'%'});
+    setStyle('.url' , {'margin-left':(7-(adjust/7))+'%'});
+       setStyle('.cancel' , {'margin-right':(adjust/10)+'%'});
+  }
 var widthList =  document.querySelector('.menu').offsetWidth;
    setStyle('.action-list' , {'width':widthList+'px'});
  console.log(widthList);
