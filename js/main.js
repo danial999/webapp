@@ -158,6 +158,7 @@ function OnRes() {
     fontSize = (100-adjust);
      console.log(fontSize);
     setStyle('.menu-title' , {'font-size':fontSize+'%'});
+      setStyle('.nav-title' , {'font-size':fontSize+'%'});
      setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
      setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
       setStyle('.link-url' , {'width':(42-(adjust/4))+'%'});                                      
