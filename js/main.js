@@ -152,9 +152,10 @@ function OnRes() {
 
   if(width>980) {
 setStyle('.menu-title' , {'font-size':100+'%'});
- 
+ setStyle('.action-list li a' , {'font-size':100+'%'});
       setStyle('.nav-title' , {'font-size':100+'%'});
        setStyle('.action-list' , {'font-size':100+'%'});
+         setStyle('.report' , {'font-size':100+'%'});
     setStyle('.page-body' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
     setStyle('.layout-wrap' , {'width':980+'px','margin-left':myMarginleft+'px','margin-right':myMarginRight+'px'});
     setStyle('.frame' , {'width':960+'px'});
@@ -162,11 +163,13 @@ setStyle('.menu-title' , {'font-size':100+'%'});
     setStyle('.rep' , {'margin-right':8+'%'});
     setStyle('.name' , {'margin-left':2+'%','margin-right':0+'%'});
     setStyle('.url' , {'margin-left':7+'%'});
+    setStyle('.link-name1' , {'width':(22)+'%'});  
+     setStyle('.link-name' , {'width':(22)+'%'});  
   }
   else {
    setStyle('.frame' , {'width': 97+ '%'});
-   setStyle('.page-body' , {'width':98.5+'%','margin-left':0+'px','margin-right':1.5+'%'});
-   setStyle('.layout-wrap' , {'width':98.5+'%','margin-left':0+'px','margin-right':1.5+'%'});
+   setStyle('.page-body' , {'width':98+'%','margin-left':0+'px','margin-right':2+'%'});
+   setStyle('.layout-wrap' , {'width':98+'%','margin-left':0+'px','margin-right':2+'%'});
    setStyle('.input' , {'width':100+'%','margin-left':0+'%','margin-right':0+'%'});
  }
   var adjust = (1000 -width);
@@ -178,16 +181,15 @@ setStyle('.menu-title' , {'font-size':100+'%'});
     fontSize = (100-adjust);
   
     setStyle('.menu-title' , {'font-size':fontSize+'%'});
- 
+    setStyle('.action-list li a' , {'font-size':fontSize+'%'});
+      setStyle('.report' , {'font-size':fontSize+'%'});
       setStyle('.nav-title' , {'font-size':fontSize+'%'});
-       setStyle('.action-list' , {'font-size':fontSize+'%'});
-     setStyle('.link-url1' , {'width':(42-(adjust/4))+'%'});                                      
-     setStyle('.link-name1' , {'width':(22-(adjust/5))+'%'});  
-      setStyle('.link-url' , {'width':(42-(adjust/4))+'%'});                                      
-     setStyle('.link-name' , {'width':(22-(adjust/5))+'%'});  
-     setStyle('.rep' , {'margin-right':(8-(adjust/3))+'%'});
+       setStyle('.action-list' , {'font-size':fontSize+'%'});                                      
+     setStyle('.link-name1' , {'width':(22-(adjust/9))+'%'});  
+     setStyle('.link-name' , {'width':(22-(adjust/9))+'%'});  
+     setStyle('.rep' , {'margin-right':(8-(adjust/7))+'%'});
     setStyle('.url' , {'margin-left':(7-(adjust/7))+'%'});
-       setStyle('.cancel' , {'margin-right':(adjust/10)+'%'});
+       setStyle('.cancel' , {'margin-right':(adjust/8)+'%'});
   }
 var widthList =  document.querySelector('.menu').offsetWidth;
    setStyle('.action-list' , {'width':widthList+'px'});
