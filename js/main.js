@@ -93,7 +93,7 @@ if(isNaN(num)){
 else{
   var list = document.querySelector('#links-list2');
 }
-debugger;
+
      str44 =str44 + "";
      var num = str44.substring(4, 5);
     
@@ -193,7 +193,6 @@ setStyle('.menu-title' , {'font-size':100+'%'});
   }
 var widthList =  document.querySelector('.menu').offsetWidth;
    setStyle('.action-list' , {'width':widthList+'px'});
- console.log(widthList);
 
 }
 function cancel_input(cancel) {
@@ -467,7 +466,7 @@ function searchFn() {
       if((hash == "quick-reports")||(hash=='')){ 
         OnChange(flag);
         var list = document.querySelector('#links-list');
-        debugger;
+       
          str1 =str1 + "";
         var num = str1.substring(4, 5);
      
@@ -480,7 +479,7 @@ function searchFn() {
     return;
    }else{ 
       if(hash =="my-team-folders" ){
-        debugger;
+  
         OnChange(flag);
         var list = document.querySelector('#links-list2');
          str1 =str1 + "";
