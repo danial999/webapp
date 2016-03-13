@@ -82,6 +82,40 @@ for (var i = 0; i < localStorage.length; i=i+2){
 }
 }
 
+document.body.onkeydown = function(e) {
+   var hash = window.location.hash.substring(1);
+  if(e.which == 37) { // left     
+    if(hash == "my-folders"){
+  window.location.hash = "quick-reports";
+
+  }
+  else if(hash == "my-team-folders"){
+            window.location.hash = "my-folders";
+
+  }
+  else if(hash == "public-folders"){
+      window.location.hash = "my-team-folders";
+  }
+
+  }
+  else if(e.which == 39) { // right     
+   if((hash == "quick-reports")||(hash=="")){
+          window.location.hash = "my-folders";
+    }
+  else  if(hash == "my-folders"){
+      window.location.hash = "my-team-folders";
+
+  }
+  else if(hash == "my-team-folders"){
+            window.location.hash = "public-folders";
+
+  }
+ 
+
+  }
+
+};
+
 if(isNaN(flag)){
 OnChange(flag);
   name44 =name44 + "";
@@ -177,6 +211,7 @@ setStyle('.menu-title' , {'font-size':100+'%'});
 
   if(adjust>0) {
     adjust=adjust/16;
+	
     
     fontSize = (100-adjust);
   
